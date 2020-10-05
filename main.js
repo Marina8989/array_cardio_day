@@ -35,4 +35,9 @@ const inventors = [
     console.log(oldestYoungest);
 
     //reduce
+    let total = inventors.reduce((acc, item) => {
+           let x = item.passed - item.year;
+           return acc + x;
+    }, 0);
 
+    console.log(total);
