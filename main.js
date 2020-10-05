@@ -29,4 +29,10 @@ const inventors = [
     console.log(firstlast);
 
     //sort
+    let oldestYoungest = inventors.sort((a,b) => {
+        return `${b.year - a.year}`
+    });
+    console.log(oldestYoungest);
+
+    //reduce
 
