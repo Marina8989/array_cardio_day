@@ -17,7 +17,7 @@ const inventors = [
 
     //filter
     let invent = inventors.filter(inventor => {
-        if(inventor.year > 1500 && inventor.year < 1600) {
+        if(inventor.year >= 1500 && inventor.year < 1600) {
              return `${inventor.first} ${inventor.last}`;
         }
     })
@@ -30,7 +30,11 @@ const inventors = [
 
     //sort
     let oldestYoungest = inventors.sort((a,b) => {
-        return `${b.year - a.year}`
+        if (a.year > b.year) {
+            return 1;
+        }else {
+           return -1;
+        }
     });
     console.log(oldestYoungest);
 
@@ -41,3 +45,23 @@ const inventors = [
     }, 0);
 
     console.log(total);
+
+    //sort the inventors by years lived
+     let yearsLived = inventors.sort((a, b) => {
+          return `${a.years - b.years}`;
+     });
+   console.log(yearsLived);
+
+   //create a list of Boulevards in Paris that contain 'de' anywhere in the name
+   //https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
+
+
+
+
+   //Sort the people alphabetically by last name
+   let alpha = people.sort((a,b) => {
+       return `${a - b}`;
+   });
+   console.log(alpha);
+
+   //Sum up the instances of each of these
